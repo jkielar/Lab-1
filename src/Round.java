@@ -50,9 +50,11 @@ public class Round {
 	
 
 		// TODO: value the eGameResult after the round is complete
-	public static int eGameResult; {
-		//return valueOf(eGameResult1);
+	public eGameResult geteGameResult()
+	{
+		return eGameResult1;
 	}
+		
 	
 
 	public static int RollCount() {
