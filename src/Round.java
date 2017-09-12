@@ -13,31 +13,37 @@ public class Round {
 		// seven-out
 		if (ComeOutScore == 2 || ComeOutScore == 3 || ComeOutScore ==12) {
 			eGameResult1= eGameResult1.CRAPS;
+			System.out.println("you win!");
 		}
 		else if (ComeOutScore ==7 || ComeOutScore == 11) {
 			eGameResult1= eGameResult1.NATURAL;
+			System.out.println("you lose!");
 		}
 		else {
 			Roll1 r2= new Roll1();
-			if (r2 == r1) {
+			if (r2.getScore()== r1.getScore()) {
 				eGameResult1= eGameResult1.POINT;
+				System.out.println("you win!");
 			}
 			else if (r2.getScore() == 7) {
 				eGameResult1= eGameResult1.SEVEN_OUT;
+				System.out.println("you lose!");
 			}
 			else {
 				Roll1 r3 = new Roll1();
-			while (r3 != r1 || r1.getScore() != 7) {
+			while (r3.getScore() != r1.getScore() || r3.getScore() != 7) {
 				Roll1 r4 = new Roll1();
 				if (r4.getScore() ==7) {
 					eGameResult1= eGameResult1.SEVEN_OUT;
+					System.out.println("you lose!");
 				}
-				else if (new Roll1() == r1) {
+				else if (r4.getScore()== r1.getScore()) {
 					eGameResult1 = eGameResult1.POINT;
+					System.out.println("you win!");
 				}
 				else {
-					new Roll1();
-				}
+					r4 = new Roll1();
+				}	
 			
 			}
 	}
